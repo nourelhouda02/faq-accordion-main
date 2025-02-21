@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light_pink: hsl(275, 100%, 97%);
+    --grayish_purple: hsl(292, 16%, 49%);
+    --dark_purple: hsl(292, 42%, 14%);
+    --font_size: 16px;
+    --font_weight: 400;  
+    --font_family: 'Work Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--font_size);
+    font-weight: var(--font_weight);
+    font-family: var(--font_family);
+    background-color: var(--light_pink); 
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.accordion {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    margin: 4rem;
+    align-items: center;
+    display: inline-block;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: 40%;
+}
+
+.accordion-title {
+    display: flex;
+    font-weight: 700;
+    color: var(--dark_purple);
+    margin-bottom: 2rem;
+}
+
+.accordion-title h1 {
+    margin-left: 30px;
+    margin-top: 3px;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--light_pink);
+}
+.icon-minus{
+    display: none;
+}
+.accordion-content {
+    display: none;
+    padding: 1.5rem 2rem;
+    color: var(--grayish_purple);
+}
+
+.accordion-header.active + .accordion-content {
+    display: block;
+    height: auto;
+    
+}
+
+
+@media (max-width: 600px) {
+    body {
+        background-size: 100% auto; 
+    }
+
+    .accordion {
+        width: 90%; 
+        margin: 2rem; 
+        padding: 1rem; 
+    }
+
+    .accordion-title {
+        font-size: 1.2rem; 
+        margin-bottom: 1rem; 
+    }
+
+    .accordion-header {
+        padding: 1rem;
+    }
+
+    .accordion-content {
+        padding: 1rem; 
+    }
+}
+
